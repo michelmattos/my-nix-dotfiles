@@ -1,0 +1,11 @@
+[settings]
+all_compile = false
+
+[settings.npm]
+bun = true
+
+[tools]
+uv = "latest"
+node = "latest"
+bun = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"

@@ -24,11 +24,14 @@
 
   # Common packages
   environment.systemPackages = with pkgs; [
+    vim
     wget
-    git
-    jujutsu
+    curl
   ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Required for running dynamic binaries
+  programs.nix-ld.enable = true;
 }

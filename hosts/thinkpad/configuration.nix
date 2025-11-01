@@ -1,26 +1,22 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
   imports =
     [
       ./hardware-configuration.nix
-      ../../modules/common.nix
-      ../../modules/desktop.nix
-      ../../modules/networking.nix
-      ../../modules/editor.nix
-      ../../modules/users.nix
+      ../../modules/system/common.nix
+      ../../modules/system/networking.nix
+      ../../modules/system/users.nix
+      ../../modules/desktop/niri/niri.nix
     ];
 
   networking.hostName = "thinkpad";
 
-  # Set helix as default editor
-  environment.variables.EDITOR = "hx";
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  environment.shellAliases = {
+    nixrebuild = "sudo nixos-rebuild switch --flake ~/.config/nixos#thinkpad";
+  };
 
   system.stateVersion = "25.05";
 }
