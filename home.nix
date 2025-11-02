@@ -8,6 +8,7 @@
     ./modules/programs/jujutsu/jujutsu.nix
     ./modules/programs/fish/fish.nix
     ./modules/programs/mise/mise.nix
+    ./modules/programs/zen-browser/zen-browser.nix
   ];
 
   home.file.".config/niri".source = ./modules/desktop/niri/dotfiles;
