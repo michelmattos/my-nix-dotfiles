@@ -1,0 +1,43 @@
+# Mako notification daemon configuration
+
+# Position
+anchor=bottom-center
+
+# Timeout
+default-timeout=3000
+
+# Styling
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#89b4fa
+border-size=2
+border-radius=10
+
+# Size and positioning
+width=300
+height=100
+margin=20
+padding=15
+
+# Font
+font=monospace 11
+
+# Outer margin for spacing from screen edges (top,right,bottom,left)
+# Bottom margin is 2x niri gaps (16*2=32)
+outer-margin=0,0,32,0
+
+# Volume notification rules
+[app-name=volume-notify]
+layer=overlay
+anchor=bottom-center
+group-by=app-name
+history=0
+format=<b>%s</b>\n%b
+
+# Brightness notification rules
+[app-name=brightness-notify]
+layer=overlay
+anchor=bottom-center
+group-by=app-name
+history=0
+format=<b>%s</b>\n%b

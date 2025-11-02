@@ -10,6 +10,7 @@
     ./modules/programs/mise/mise.nix
     ./modules/programs/zen-browser/zen-browser.nix
     ./modules/programs/waybar/waybar.nix
+    ./modules/programs/mako/mako.nix
   ];
 
   home.file.".config/niri".source = ./modules/desktop/niri/dotfiles;
