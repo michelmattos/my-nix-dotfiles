@@ -1,0 +1,107 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 32,
+  "spacing": 4,
+
+  "modules-left": ["niri/workspaces", "niri/window"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "backlight", "battery", "network", "tray"],
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "●",
+      "default": "○"
+    }
+  },
+
+  "niri/window": {
+    "format": "{}",
+    "max-length": 50,
+    "rewrite": {
+      "(.*) — Zen Browser": "🌎 $1",
+      "(.*) - fish": " $1"
+    }
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "format-alt": "{:%d/%m/%Y %H:%M}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "{icon} {capacity}%",
+    "format-plugged": "{icon} {capacity}%",
+    "format-alt": "{icon} {time}",
+    "format-icons": ["🔋", "🔋", "🔋", "🔋", "🔋"]
+  },
+
+  "network": {
+    "format-wifi": "{icon} {essid}",
+    "format-ethernet": "{icon} {ipaddr}",
+    "format-linked": "{icon} {ifname} (No IP)",
+    "format-disconnected": "{icon} Disconnected",
+    "format-alt": "{icon} {ifname}: {ipaddr}/{cidr}",
+    "format-icons": {
+      "wifi": "📶",
+      "ethernet": "🌐",
+      "linked": "🌐",
+      "disconnected": "❌"
+    },
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "tooltip-format-wifi": " {essid} ({signalStrength}%)"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "{icon} {volume}%",
+    "format-icons": {
+      "headphone": "🔊",
+      "hands-free": "🔊",
+      "headset": "🔊",
+      "phone": "🔊",
+      "portable": "🔊",
+      "car": "🔊",
+      "default": ["🔊", "🔊", "🔊"],
+      "muted": "🔇"
+    },
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["☀️", "☀️", "☀️", "☀️", "☀️", "☀️", "☀️", "☀️", "☀️"],
+    "smooth-scrolling-threshold": 5.0,
+    "on-scroll-up": "brightnessctl --class=backlight set +5%",
+    "on-scroll-down": "brightnessctl --class=backlight set 5%-"
+  },
+
+  "tray": {
+    "spacing": 10
+  }
+}
