@@ -17,5 +17,29 @@
     EDITOR = "hx";
   };
 
+  # GTK theme configuration for dark mode
+  gtk = {
+    enable = true;
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
+    };
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = true;
+    };
+  };
+
+  # Set dark mode preference for modern applications
+  # This is the primary mechanism for dark mode in niri
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
+  };
+
   home.stateVersion = "25.05";
 }
