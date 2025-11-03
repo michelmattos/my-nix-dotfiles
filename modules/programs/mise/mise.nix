@@ -7,5 +7,5 @@
     enableFishIntegration = true;
   };
 
-  home.file.".config/mise".source = ./dotfiles;
+  xdg.configFile."mise".source = ./dotfiles;
 }

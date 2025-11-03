@@ -3,5 +3,5 @@
 {
   programs.helix.enable = true;
 
-  home.file.".config/helix".source = ./dotfiles;
+  xdg.configFile."helix".source = ./dotfiles;
 }

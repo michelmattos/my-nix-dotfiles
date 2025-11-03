@@ -15,7 +15,7 @@
     ./modules/programs/mako/mako.nix
   ];
 
-  home.file.".config/niri".source = ./modules/desktop/niri/dotfiles;
+  xdg.configFile."niri".source = ./modules/desktop/niri/dotfiles;
 
   home.sessionVariables = {
     EDITOR = "hx";

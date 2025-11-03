@@ -5,5 +5,5 @@
     jujutsu
   ];
 
-  home.file.".config/jj".source = ./dotfiles;
+  xdg.configFile."jj".source = ./dotfiles;
 }
