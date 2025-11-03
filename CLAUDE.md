@@ -75,4 +75,4 @@ modules/programs/
 - Unfree packages are allowed
 - `nix-ld` is enabled for running dynamic binaries
 - LUKS encryption is configured in common.nix
-- This project uses jujutsu instead of git (use `jj` commands when necessary)
+- IMPORTANT: use `jj` instead of `git`
