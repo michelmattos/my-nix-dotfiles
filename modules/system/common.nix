@@ -4,7 +4,15 @@
   # Boot loader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 4;
   boot.initrd.luks.devices."luks-06bfc710-ef22-436e-851a-98dd239aeb9a".device = "/dev/disk/by-uuid/06bfc710-ef22-436e-851a-98dd239aeb9a";
+
+  # Garbage collection
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 30d";
+  };
 
   # Timezone and locale
   time.timeZone = "Pacific/Auckland";
