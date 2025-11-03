@@ -6,6 +6,8 @@
     ./modules/programs/alacritty/alacritty.nix
     ./modules/programs/git/git.nix
     ./modules/programs/jujutsu/jujutsu.nix
+    ./modules/programs/lazygit/lazygit.nix
+    ./modules/programs/lazyjj/lazyjj.nix
     ./modules/programs/fish/fish.nix
     ./modules/programs/mise/mise.nix
     ./modules/programs/zen-browser/zen-browser.nix
