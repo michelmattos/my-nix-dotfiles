@@ -1,0 +1,16 @@
+# Ghostty terminal configuration
+
+# Working directory inheritance - the key feature!
+# New windows will open in the same directory as the currently focused window
+window-inherit-working-directory = true
+
+# Font configuration (matching Alacritty setup)
+font-family = JetBrainsMono Nerd Font
+font-size = 11
+
+# Theme
+theme = Adwaita Dark
+
+# Shell integration
+shell-integration = fish
+shell-integration-features = no-cursor,sudo,title
