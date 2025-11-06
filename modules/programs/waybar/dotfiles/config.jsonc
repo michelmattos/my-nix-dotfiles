@@ -20,14 +20,14 @@
     "format": "{}",
     "max-length": 50,
     "rewrite": {
-      "(.*) — Zen Browser": "🌎 $1",
+      "(.*) — Zen Browser": "\uf0ac $1",
       "(.*) - fish": " $1"
     }
   },
 
   "clock": {
-    "format": "{:%H:%M}",
-    "format-alt": "{:%d/%m/%Y %H:%M}",
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%d %b, %I:%M %p}",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -58,7 +58,7 @@
     "format-charging": "{icon} {capacity}%",
     "format-plugged": "{icon} {capacity}%",
     "format-alt": "{icon} {time}",
-    "format-icons": ["🔋", "🔋", "🔋", "🔋", "🔋"]
+    "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
   },
 
   "network": {
@@ -68,10 +68,10 @@
     "format-disconnected": "{icon} Disconnected",
     "format-alt": "{icon} {ifname}: {ipaddr}/{cidr}",
     "format-icons": {
-      "wifi": "📶",
-      "ethernet": "🌐",
-      "linked": "🌐",
-      "disconnected": "❌"
+      "wifi": "\uf1eb",
+      "ethernet": "\uef44",
+      "linked": "\uef44",
+      "disconnected": "\uf00d"
     },
     "tooltip-format": "{ifname} via {gwaddr}",
     "tooltip-format-wifi": " {essid} ({signalStrength}%)"
@@ -81,21 +81,21 @@
     "format": "{icon} {volume}%",
     "format-muted": "{icon} {volume}%",
     "format-icons": {
-      "headphone": "🔊",
-      "hands-free": "🔊",
-      "headset": "🔊",
-      "phone": "🔊",
-      "portable": "🔊",
-      "car": "🔊",
-      "default": ["🔊", "🔊", "🔊"],
-      "muted": "🔇"
+      "headphone": "\uf025",
+      "hands-free": "\uf025",
+      "headset": "\uf025",
+      "phone": "\uf095",
+      "portable": "\uf025",
+      "car": "\uf1b9",
+      "default": ["\uf027", "\uf027", "\uf028"],
+      "muted": "\ueee8"
     },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
 
   "backlight": {
     "format": "{icon} {percent}%",
-    "format-icons": ["☀️", "☀️", "☀️", "☀️", "☀️", "☀️", "☀️", "☀️", "☀️"],
+    "format-icons": ["\uf185", "\uf185", "\uf185", "\uf185", "\uf185", "\uf185", "\uf185", "\uf185", "\uf185"],
     "smooth-scrolling-threshold": 5.0,
     "on-scroll-up": "brightnessctl --class=backlight set +5%",
     "on-scroll-down": "brightnessctl --class=backlight set 5%-"
