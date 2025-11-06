@@ -4,7 +4,6 @@
   imports = [
     ./modules/desktop/fonts/fonts.nix
     ./modules/programs/helix/helix.nix
-    ./modules/programs/alacritty/alacritty.nix
     ./modules/programs/ghostty/ghostty.nix
     ./modules/programs/git/git.nix
     ./modules/programs/jujutsu/jujutsu.nix
