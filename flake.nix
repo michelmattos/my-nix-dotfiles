@@ -11,9 +11,13 @@
       url = "github:0xc000022070/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    astronvim-template = {
+      url = "github:AstroNvim/template";
+      flake = false;
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }: {
+  outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     nixosConfigurations.thinkpad = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -24,7 +28,7 @@
           home-manager.useUserPackages = true;
           home-manager.users.michel = import ./home.nix;
           home-manager.extraSpecialArgs = {
-            inherit zen-browser;
+            inherit inputs;
           };
         }
       ];

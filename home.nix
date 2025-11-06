@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./modules/desktop/fonts/fonts.nix
     ./modules/programs/helix/helix.nix
     ./modules/programs/alacritty/alacritty.nix
     ./modules/programs/git/git.nix
@@ -10,12 +11,17 @@
     ./modules/programs/lazyjj/lazyjj.nix
     ./modules/programs/fish/fish.nix
     ./modules/programs/mise/mise.nix
+    ./modules/programs/neovim/neovim.nix
     ./modules/programs/zen-browser/zen-browser.nix
     ./modules/programs/waybar/waybar.nix
     ./modules/programs/mako/mako.nix
   ];
 
   xdg.configFile."niri".source = ./modules/desktop/niri/dotfiles;
+
+  home.shellAliases = {
+    n = "nvim";
+  };
 
   home.sessionVariables = {
     EDITOR = "hx";

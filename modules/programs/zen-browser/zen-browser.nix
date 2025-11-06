@@ -1,8 +1,8 @@
-{ config, pkgs, zen-browser, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
-    zen-browser.homeModules.twilight
+    inputs.zen-browser.homeModules.twilight
   ];
 
   programs.zen-browser = {
