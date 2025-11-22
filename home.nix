@@ -15,6 +15,7 @@
     ./modules/programs/zen-browser/zen-browser.nix
     ./modules/programs/waybar/waybar.nix
     ./modules/programs/mako/mako.nix
+    ./modules/programs/zed/zed.nix
   ];
 
   xdg.configFile."niri".source = ./modules/desktop/niri/dotfiles;
