@@ -273,8 +273,11 @@ cursor {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+// This line starts eww bar
+spawn-at-startup "eww" "open" "bar"
+
+// Waybar (commented out, replaced by eww)
+// spawn-at-startup "waybar"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"

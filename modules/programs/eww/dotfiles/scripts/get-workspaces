@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# Streams workspace info from niri event-stream
+
+get_workspaces() {
+    niri msg -j workspaces | jq -c '[.[] | {idx: .idx, is_active: .is_active}] | sort_by(.idx)'
+}
+
+# Initial output
+get_workspaces
+
+# Listen for workspace changes
+niri msg --json event-stream | while read -r line; do
+    if echo "$line" | jq -e '.WorkspacesChanged or .WorkspaceActivated' > /dev/null 2>&1; then
+        get_workspaces
+    fi
+done

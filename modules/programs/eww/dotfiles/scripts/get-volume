@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Stream volume changes using pactl subscribe
+
+get_volume() {
+    vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null | awk '{printf "%.0f", $2 * 100}')
+    echo "${vol:-0}"
+}
+
+# Initial output
+get_volume
+
+# Listen for volume changes
+pactl subscribe 2>/dev/null | while read -r line; do
+    if echo "$line" | grep -q "sink"; then
+        get_volume
+    fi
+done

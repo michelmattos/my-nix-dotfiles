@@ -1,0 +1,155 @@
+// ===========================================================================
+// CATPPUCCIN MOCHA COLOR PALETTE
+// ===========================================================================
+$background: rgba(30, 30, 46, 0.95);
+$surface0: #313244;
+$surface1: #1e1e2e;
+$text: #cdd6f4;
+$subtext0: #7f849c;
+$base: #1e1e2e;
+
+$blue: #89b4fa;
+$green: #a6e3a1;
+$peach: #fab387;
+$red: #f38ba8;
+$mauve: #cba6f7;
+$sky: #89dceb;
+$yellow: #f9e2af;
+
+// ===========================================================================
+// RESET AND BASE
+// ===========================================================================
+* {
+  all: unset;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
+  font-size: 12px;
+}
+
+// ===========================================================================
+// BAR WINDOW
+// ===========================================================================
+window {
+  background-color: $background;
+  color: $text;
+
+  & > * {
+    margin: 3px;
+  }
+}
+
+// ===========================================================================
+// SEGMENTS
+// ===========================================================================
+.segment-top {
+  margin-top: 10px;
+}
+
+.segment-bottom {
+  margin-bottom: 10px;
+}
+
+// ===========================================================================
+// WORKSPACES
+// ===========================================================================
+.workspaces {
+  background-color: transparent;
+}
+
+.workspace {
+  padding: 4px 8px;
+  background-color: transparent;
+  color: $subtext0;
+  border-radius: 6px;
+
+  &.active {
+    color: $blue;
+  }
+
+  &:hover {
+    background-color: rgba(137, 180, 250, 0.2);
+    color: $text;
+  }
+}
+
+// ===========================================================================
+// TIME
+// ===========================================================================
+.time {
+  padding: 7px 0;
+  color: $subtext0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+// ===========================================================================
+// METRICS
+// ===========================================================================
+.metric {
+  background-color: $surface1;
+  padding: 5px 2px;
+  border-radius: 4px;
+}
+
+.metric-icon {
+  font-size: 0.9em;
+  margin-bottom: 2px;
+}
+
+// ===========================================================================
+// DATE
+// ===========================================================================
+.date {
+  background-color: $surface1;
+  padding: 5px 2px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+// ===========================================================================
+// SYSTRAY
+// ===========================================================================
+.tray {
+  background-color: transparent;
+}
+
+// System Tray Menu
+menu {
+  padding: 5px;
+  background-color: $surface1;
+  border-radius: 6px;
+
+  > menuitem {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px;
+
+    &:disabled label {
+      color: $subtext0;
+    }
+
+    &:hover {
+      background-color: $surface0;
+    }
+  }
+
+  separator {
+    padding-top: 1px;
+
+    &:last-child {
+      padding: unset;
+    }
+  }
+}
+
+// ===========================================================================
+// TOOLTIPS
+// ===========================================================================
+tooltip {
+  background-color: $base;
+  border: 1px solid $blue;
+  border-radius: 6px;
+
+  label {
+    color: $text;
+  }
+}
