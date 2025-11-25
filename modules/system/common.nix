@@ -42,4 +42,12 @@
 
   # Required for running dynamic binaries
   programs.nix-ld.enable = true;
+
+  # Bluetooth support (for Noctalia Bluetooth widget)
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  # Battery/power features (for Noctalia)
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 }

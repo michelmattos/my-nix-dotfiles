@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -13,10 +13,8 @@
     ./modules/programs/mise/mise.nix
     ./modules/programs/neovim/neovim.nix
     ./modules/programs/zen-browser/zen-browser.nix
-    # ./modules/programs/waybar/waybar.nix  # Replaced by eww
-    ./modules/programs/eww/eww.nix
-    ./modules/programs/mako/mako.nix
     ./modules/programs/zed/zed.nix
+    ./modules/programs/noctalia/noctalia.nix  # Replaces eww, mako, fuzzel, swaylock
   ];
 
   xdg.configFile."niri".source = ./modules/desktop/niri/dotfiles;

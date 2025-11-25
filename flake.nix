@@ -15,6 +15,10 @@
       url = "github:AstroNvim/template";
       flake = false;
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
