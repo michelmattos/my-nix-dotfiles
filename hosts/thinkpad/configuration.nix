@@ -7,6 +7,7 @@
       ../../modules/system/common.nix
       ../../modules/system/networking.nix
       ../../modules/system/users.nix
+      ../../modules/system/greetd.nix
       ../../modules/desktop/niri/niri.nix
     ];
 

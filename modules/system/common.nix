@@ -5,7 +5,32 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 4;
+  boot.loader.timeout = 0; # Hide boot menu (press key to show)
   boot.initrd.luks.devices."luks-06bfc710-ef22-436e-851a-98dd239aeb9a".device = "/dev/disk/by-uuid/06bfc710-ef22-436e-851a-98dd239aeb9a";
+
+  # Plymouth for graphical LUKS password prompt
+  boot.plymouth = {
+    enable = true;
+    theme = "hexagon_dots_alt";
+    themePackages = [
+      (pkgs.adi1090x-plymouth-themes.override {
+        selected_themes = [ "hexagon_dots_alt" ];
+      })
+    ];
+  };
+  boot.initrd.systemd.enable = true;
+
+  # Silent boot
+  boot.consoleLogLevel = 0;
+  boot.initrd.verbose = false;
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+    "loglevel=3"
+    "rd.systemd.show_status=false"
+    "rd.udev.log_level=3"
+    "udev.log_priority=3"
+  ];
 
   # Garbage collection
   nix.gc = {
