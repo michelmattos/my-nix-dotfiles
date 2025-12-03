@@ -17,6 +17,7 @@
     ./modules/programs/noctalia/noctalia.nix  # Replaces eww, mako, fuzzel, swaylock
     ./modules/programs/tte/tte.nix
     ./modules/programs/swayidle/swayidle.nix
+    ./modules/programs/ssh/ssh.nix
   ];
 
   xdg.configFile."niri".source = ./modules/desktop/niri/dotfiles;
