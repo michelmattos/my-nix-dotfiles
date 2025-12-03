@@ -6,8 +6,11 @@
 
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "yes";  # Auto-add keys when first used
+    enableDefaultConfig = false;
     matchBlocks = {
+      "*" = {
+        addKeysToAgent = "yes";  # Auto-add keys when first used
+      };
       "github.com" = {
         hostname = "github.com";
         user = "git";
