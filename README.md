@@ -54,6 +54,17 @@ reboot
 
 ## After Rebuild
 
+### Set Up SSH Key
+
+```bash
+# Copy your private key to ~/.ssh/github and set permissions
+mv ~/Downloads/github ~/.ssh/github
+chmod 600 ~/.ssh/github
+
+# Test the connection
+ssh -T git@github.com
+```
+
 ### Install Development Tools
 
 ```bash
