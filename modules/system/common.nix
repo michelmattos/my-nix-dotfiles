@@ -59,6 +59,8 @@
     vim
     wget
     curl
+    jq
+    btop
   ];
 
   # Allow unfree packages
