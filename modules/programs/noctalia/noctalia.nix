@@ -24,7 +24,7 @@
         panelBackgroundOpacity = 0;
       };
       bar = {
-        position = "left";
+        position = "top";
         backgroundOpacity = 0;
         capsuleOpacity = 0.8;
         widgets = {
