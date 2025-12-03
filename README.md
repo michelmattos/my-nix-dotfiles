@@ -54,6 +54,10 @@ reboot
 
 ## After Rebuild
 
+### Set Up Fingerprint Authentication
+
+See [Fingerprint README](modules/system/fingerprint/README.md) for enrollment instructions.
+
 ### Set Up SSH Key
 
 ```bash

@@ -9,6 +9,7 @@
       ../../modules/system/users.nix
       ../../modules/system/greetd.nix
       ../../modules/desktop/niri/niri.nix
+      ../../modules/system/fingerprint/fingerprint.nix
     ];
 
   networking.hostName = "thinkpad";
