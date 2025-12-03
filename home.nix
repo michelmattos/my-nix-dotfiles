@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, hostname, ... }:
 
 {
   imports = [
@@ -20,7 +20,12 @@
     ./modules/programs/ssh/ssh.nix
   ];
 
-  xdg.configFile."niri".source = ./modules/desktop/niri/dotfiles;
+  xdg.configFile."niri/config.kdl".text = let
+    baseConfig = builtins.readFile ./modules/desktop/niri/dotfiles/config.kdl;
+    hostConfig = lib.optionalString (builtins.pathExists ./modules/desktop/niri/dotfiles/${hostname}.kdl)
+      (builtins.readFile ./modules/desktop/niri/dotfiles/${hostname}.kdl);
+  in
+    baseConfig + "\n" + hostConfig;
 
   home.shellAliases = {
     n = "nvim";

@@ -33,6 +33,7 @@
           home-manager.users.michel = import ./home.nix;
           home-manager.extraSpecialArgs = {
             inherit inputs;
+            hostname = "thinkpad";
           };
         }
       ];
@@ -49,6 +50,7 @@
           home-manager.users.michel = import ./home.nix;
           home-manager.extraSpecialArgs = {
             inherit inputs;
+            hostname = "carbon";
           };
         }
       ];

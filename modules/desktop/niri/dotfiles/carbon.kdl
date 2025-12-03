@@ -1,0 +1,15 @@
+// Carbon X1 Gen 13 OLED display configuration
+output "eDP-1" {
+    mode "2880x1800@120"
+    scale 1.75
+    variable-refresh-rate on-demand=true
+}
+
+// Enable VRR for video players and games
+window-rule {
+    match app-id="^mpv$"
+    match app-id="^vlc$"
+    match app-id="^steam_app"
+    match app-id="^gamescope$"
+    variable-refresh-rate true
+}
