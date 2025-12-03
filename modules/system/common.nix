@@ -5,8 +5,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 4;
-  boot.loader.timeout = 0; # Hide boot menu (press key to show)
-  boot.initrd.luks.devices."luks-06bfc710-ef22-436e-851a-98dd239aeb9a".device = "/dev/disk/by-uuid/06bfc710-ef22-436e-851a-98dd239aeb9a";
+  boot.loader.timeout = 3; # Hide boot menu (press key to show)
 
   # Plymouth for graphical LUKS password prompt
   boot.plymouth = {
@@ -42,7 +41,7 @@
   # Timezone and locale
   time.timeZone = "Pacific/Auckland";
   i18n.defaultLocale = "en_NZ.UTF-8";
-  
+
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "en_NZ.UTF-8";
     LC_IDENTIFICATION = "en_NZ.UTF-8";
