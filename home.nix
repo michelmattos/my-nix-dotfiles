@@ -36,7 +36,9 @@
     EDITOR = "hx";
   };
 
-  # GTK theme configuration for dark mode
+  # GTK theme configuration
+  # GTK4/libadwaita apps use dconf color-scheme (below), not theme packages
+  # This is only needed for GTK2/GTK3 apps
   gtk = {
     enable = true;
     theme = {
@@ -47,13 +49,10 @@
       name = "Adwaita";
       package = pkgs.adwaita-icon-theme;
     };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = true;
-    };
   };
 
-  # Set dark mode preference for modern applications
-  # This is the primary mechanism for dark mode in niri
+  # Dark mode for GTK4/libadwaita and modern apps
+  # This is the correct mechanism - gtk-application-prefer-dark-theme is deprecated
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";

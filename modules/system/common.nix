@@ -84,4 +84,13 @@
   # Battery/power features (for Noctalia)
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
+
+  # Audio (PipeWire)
+  security.rtkit.enable = true;  # Real-time scheduling for better audio performance
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+  };
 }

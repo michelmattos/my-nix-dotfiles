@@ -62,6 +62,14 @@ For programs, add a new module in `modules/programs/[PROGRAM]/` with:
 
 Then import the module in `home.nix`.
 
+### Documentation Pattern
+
+Modules can include a `docs/` folder for module-specific documentation:
+- `docs/known-issues/` - Document known issues, upstream bugs, and workarounds
+- Each issue file should include: symptom, cause, upstream status/links, impact, and possible workarounds
+
+Example: `modules/desktop/niri/docs/known-issues/niri-session-import-environment-deprecated.md`
+
 ## Important Notes
 
 - Assume your knowledge about NixOS, flakes and niri are not up-to-date. Use search and web tools to find the most up-to-date info
