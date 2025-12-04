@@ -46,6 +46,9 @@
               storageUsage = false;
             }
             {
+              id = "ActiveWindow";
+            }
+            {
               id = "MediaMini";
               showAlbumArt = false;
               showArtistFirst = true;
