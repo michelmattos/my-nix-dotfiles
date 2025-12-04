@@ -237,8 +237,16 @@ layout {
 }
 
 cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
     hide-when-typing
     hide-after-inactive-ms 1000
+}
+
+// Environment variables for apps that don't respect cursor settings
+environment {
+    XCURSOR_THEME "Adwaita"
+    XCURSOR_SIZE "24"
 }
 
 // Add lines like this to spawn processes at startup.
