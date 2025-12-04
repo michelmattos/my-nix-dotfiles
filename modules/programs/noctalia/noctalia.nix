@@ -25,6 +25,7 @@
       };
       bar = {
         position = "top";
+        density = "comfortable";
         backgroundOpacity = 0;
         capsuleOpacity = 0.8;
         widgets = {
