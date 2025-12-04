@@ -18,6 +18,7 @@
     ./modules/programs/tte/tte.nix
     ./modules/programs/swayidle/swayidle.nix
     ./modules/programs/ssh/ssh.nix
+    ./modules/programs/helium/helium.nix
   ];
 
   xdg.configFile."niri/config.kdl".text = let
