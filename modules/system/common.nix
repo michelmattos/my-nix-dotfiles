@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  # Use latest kernel for better Intel Lunar Lake support
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Boot loader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -72,6 +75,11 @@
   # Bluetooth support (for Noctalia Bluetooth widget)
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
+
+  # Intel GPU compute support (OpenCL, Level Zero)
+  hardware.graphics.extraPackages = with pkgs; [
+    intel-compute-runtime
+  ];
 
   # Battery/power features (for Noctalia)
   services.upower.enable = true;
