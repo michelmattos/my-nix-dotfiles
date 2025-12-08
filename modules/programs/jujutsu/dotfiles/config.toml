@@ -12,6 +12,6 @@ editor = "hx"
 diff-editor = ":builtin"
 relative-timestamps = true
 
-[git]
-# Automatically track all remote branches as local bookmarks
-auto-local-bookmark = true
+[remotes.origin]
+# Automatically track all remote bookmarks
+auto-track-bookmarks = "glob:*"
