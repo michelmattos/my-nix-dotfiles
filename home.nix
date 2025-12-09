@@ -10,6 +10,9 @@
     ./modules/programs/lazygit/lazygit.nix
     ./modules/programs/lazyjj/lazyjj.nix
     ./modules/programs/fish/fish.nix
+    ./modules/programs/zoxide/zoxide.nix
+    ./modules/programs/fzf/fzf.nix
+    ./modules/programs/eza/eza.nix
     ./modules/programs/mise/mise.nix
     ./modules/programs/neovim/neovim.nix
     ./modules/programs/zen-browser/zen-browser.nix
@@ -30,6 +33,9 @@
 
   home.shellAliases = {
     n = "nvim";
+    ll = "eza -lh --group-directories-first --icons=auto";
+    la = "eza -lah --group-directories-first --icons=auto";
+    lt = "eza -lh --tree --level=2 --icons=auto";
   };
 
   home.sessionVariables = {
