@@ -14,3 +14,6 @@ theme = Adwaita Dark
 # Shell integration
 shell-integration = fish
 shell-integration-features = no-cursor,sudo,title
+
+# Disable close confirmation dialog
+confirm-close-surface = false
