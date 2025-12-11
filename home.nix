@@ -22,6 +22,7 @@
     ./modules/programs/swayidle/swayidle.nix
     ./modules/programs/ssh/ssh.nix
     ./modules/programs/chromium/chromium.nix
+    ./modules/programs/dolphin/dolphin.nix
   ];
 
   xdg.configFile."niri/config.kdl".text = let
@@ -62,6 +63,16 @@
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
+    };
+  };
+
+  # Qt theming to match GTK dark theme
+  qt = {
+    enable = true;
+    platformTheme.name = "adwaita";
+    style = {
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
     };
   };
 
