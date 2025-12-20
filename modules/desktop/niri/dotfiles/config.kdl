@@ -344,10 +344,6 @@ binds {
     // Most actions that you can bind here can also be invoked programmatically with
     // `niri msg action do-something`.
 
-    // Mod-Shift-/, which is usually the same as Mod-?,
-    // shows a list of important hotkeys.
-    Mod+Shift+Slash { show-hotkey-overlay; }
-
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Super+Return hotkey-overlay-title="Open a Terminal: ghostty" { spawn "ghostty"; }
     Super+Space hotkey-overlay-title="Run an Application: Noctalia Launcher" { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
@@ -369,7 +365,7 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
 
     // Noctalia notification history
-    Super+N { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
+    Super+N hotkey-overlay-title="Notification History" { spawn "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -384,8 +380,23 @@ binds {
     Super+Shift+T hotkey-overlay-title="System Monitor: btop" { spawn "ghostty" "-e" "btop"; }
     Super+Shift+N hotkey-overlay-title="Editor: Neovim" { spawn "ghostty" "-e" "nvim"; }
 
+    // Web apps
+    Super+Shift+E hotkey-overlay-title="Email: Proton Mail" { spawn "chromium" "--app=https://mail.proton.me"; }
+    Super+Shift+A hotkey-overlay-title="AI: Claude" { spawn "chromium" "--app=https://claude.ai"; }
+    Super+Shift+O hotkey-overlay-title="Notes: Notion" { spawn "chromium" "--app=https://www.notion.so"; }
+
     // Session/Power menu
     Super+Escape hotkey-overlay-title="Session Menu" { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+
+    // Show keybindings
+    Super+K hotkey-overlay-title="Show Keybindings" { show-hotkey-overlay; }
+
+    // Notifications (Noctalia)
+    Super+Comma hotkey-overlay-title="Dismiss Notification" { spawn "noctalia-shell" "ipc" "call" "notifications" "dismiss"; }
+    Super+Shift+Comma hotkey-overlay-title="Dismiss All Notifications" { spawn "noctalia-shell" "ipc" "call" "notifications" "dismissAll"; }
+
+    // Clipboard history
+    Super+Ctrl+V hotkey-overlay-title="Clipboard History" { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
@@ -550,7 +561,7 @@ binds {
     Mod+Ctrl+F { expand-column-to-available-width; }
 
     // Noctalia Control Center (replaces center-column)
-    Mod+C { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
+    Mod+C hotkey-overlay-title="Control Center" { spawn "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; }
 
     // Center all fully visible columns on screen.
     Mod+Ctrl+C { center-visible-columns; }

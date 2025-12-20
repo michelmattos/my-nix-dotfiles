@@ -104,6 +104,9 @@
       controlCenter = {
         position = "center";
       };
+      appLauncher = {
+        enableClipboardHistory = true;
+      };
       dock = {
         enabled = false;
       };
