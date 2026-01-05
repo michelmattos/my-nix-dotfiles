@@ -8,4 +8,5 @@ bun = true
 uv = "latest"
 node = "latest"
 bun = "latest"
+opencode = "latest"
 "npm:@anthropic-ai/claude-code" = "latest"
