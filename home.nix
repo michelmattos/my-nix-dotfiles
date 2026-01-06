@@ -24,6 +24,7 @@
     ./modules/programs/chromium/chromium.nix
     ./modules/programs/dolphin/dolphin.nix
     ./modules/programs/oculante/oculante.nix
+    ./modules/programs/gnome-sound-recorder/gnome-sound-recorder.nix
   ];
 
   xdg.configFile."niri/config.kdl".text = let
