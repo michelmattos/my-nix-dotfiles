@@ -23,6 +23,7 @@
     ./modules/programs/ssh/ssh.nix
     ./modules/programs/chromium/chromium.nix
     ./modules/programs/dolphin/dolphin.nix
+    ./modules/programs/oculante/oculante.nix
   ];
 
   xdg.configFile."niri/config.kdl".text = let

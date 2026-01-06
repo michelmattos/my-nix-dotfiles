@@ -326,6 +326,12 @@ window-rule {
     // block-out-from "screencast"
 }
 
+// Oculante image viewer: open maximized (entire screen but not fullscreen mode)
+window-rule {
+    match app-id=r#"^oculante$"#
+    open-maximized true
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
