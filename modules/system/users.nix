@@ -15,6 +15,6 @@
   users.users.michel = {
     isNormalUser = true;
     description = "Michel Mattos";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "kvm" "adbusers" ];
   };
 }

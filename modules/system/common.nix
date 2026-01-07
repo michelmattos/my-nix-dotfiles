@@ -64,6 +64,7 @@
     curl
     jq
     btop
+    android-tools  # adb, fastboot
   ];
 
   # Allow unfree packages
