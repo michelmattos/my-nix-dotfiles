@@ -332,6 +332,21 @@ window-rule {
     open-maximized true
 }
 
+// Android Emulator toolbar: force tiling instead of floating
+window-rule {
+    match app-id="Emulator" title="^Emulator$"
+    open-floating false
+}
+
+// Android Emulator: lock window size to prevent resize on focus change
+window-rule {
+    match app-id="Emulator" title="^Android Emulator"
+    min-width 472
+    max-width 472
+    min-height 840
+    max-height 840
+}
+
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
