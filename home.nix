@@ -13,6 +13,7 @@
     ./modules/programs/zoxide/zoxide.nix
     ./modules/programs/fzf/fzf.nix
     ./modules/programs/eza/eza.nix
+    ./modules/programs/direnv/direnv.nix
     ./modules/programs/mise/mise.nix
     ./modules/programs/neovim/neovim.nix
     ./modules/programs/zen-browser/zen-browser.nix
