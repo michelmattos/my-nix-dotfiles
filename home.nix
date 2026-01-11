@@ -19,6 +19,7 @@
     ./modules/programs/neovim/neovim.nix
     ./modules/programs/zen-browser/zen-browser.nix
     ./modules/programs/zed/zed.nix
+    ./modules/programs/cursor/cursor.nix
     ./modules/programs/noctalia/noctalia.nix  # Replaces eww, mako, fuzzel, swaylock
     ./modules/programs/tte/tte.nix
     ./modules/programs/swayidle/swayidle.nix
