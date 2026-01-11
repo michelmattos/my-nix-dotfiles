@@ -6,6 +6,7 @@
     ./modules/programs/helix/helix.nix
     ./modules/programs/ghostty/ghostty.nix
     ./modules/programs/git/git.nix
+    ./modules/programs/gh/gh.nix
     ./modules/programs/jujutsu/jujutsu.nix
     ./modules/programs/lazygit/lazygit.nix
     ./modules/programs/lazyjj/lazyjj.nix
