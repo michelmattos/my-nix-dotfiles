@@ -27,10 +27,6 @@
       modules = [
         ./hosts/thinkpad/configuration.nix
 
-        # TODO: Remove this overlay once nixpkgs PR #476565 is merged
-        # https://github.com/NixOS/nixpkgs/pull/476565
-        { nixpkgs.overlays = [ (import ./modules/programs/oculante/libaom-fix-overlay.nix) ]; }
-
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
@@ -47,10 +43,6 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/carbon/configuration.nix
-
-        # TODO: Remove this overlay once nixpkgs PR #476565 is merged
-        # https://github.com/NixOS/nixpkgs/pull/476565
-        { nixpkgs.overlays = [ (import ./modules/programs/oculante/libaom-fix-overlay.nix) ]; }
 
         home-manager.nixosModules.home-manager {
           home-manager.useGlobalPkgs = true;
