@@ -65,6 +65,7 @@
     jq
     btop
     android-tools  # adb, fastboot
+    libva-utils    # vainfo for VA-API diagnostics
   ];
 
   # Allow unfree packages
@@ -77,10 +78,20 @@
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
-  # Intel GPU compute support (OpenCL, Level Zero)
-  hardware.graphics.extraPackages = with pkgs; [
-    intel-compute-runtime
-  ];
+  # Intel GPU support (Lunar Lake / Xe2 architecture)
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-compute-runtime  # OpenCL + Level Zero for compute
+      intel-media-driver     # VA-API (iHD) for hardware video decode/encode
+      vpl-gpu-rt             # Intel Quick Sync Video runtime
+    ];
+  };
+
+  # Prefer Intel iHD driver for VA-API
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 
   # Battery/power features (for Noctalia)
   services.upower.enable = true;
@@ -93,5 +104,13 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  # btop with CAP_PERFMON for Intel GPU monitoring
+  security.wrappers.btop = {
+    owner = "root";
+    group = "root";
+    source = "${pkgs.btop}/bin/btop";
+    capabilities = "cap_perfmon+ep";
   };
 }
